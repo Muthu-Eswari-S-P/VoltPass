@@ -1,0 +1,16 @@
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+npm-debug.log*
+yarn-debug.log*
+.DS_Store
+Thumbs.db
+desktop.ini
+files(3).zip
+data/telemetry.csv
+.render/

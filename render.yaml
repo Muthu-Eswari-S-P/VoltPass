@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: voltpass-muthu-eswari
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci && python3 -m venv .venv && .venv/bin/pip install --no-cache-dir -r requirements.txt
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit

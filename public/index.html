@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoltPass | Battery Passport</title>
+  <link rel="icon" type="image/svg+xml" href="/voltpass-logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/marketplace.css"><link rel="stylesheet" href="/ml.css"><link rel="stylesheet" href="/transactions.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand brand-link" href="/"><img class="brand-logo" src="/voltpass-logo.svg" alt="VoltPass logo"><div><strong>VoltPass</strong><small>BATTERY PASSPORT</small></div></a><nav><a href="/" class="active">Passport</a><a href="/marketplace.html">Marketplace</a></nav><div class="live"><span></span> LIVE TELEMETRY <b id="lastUpdated">--</b></div></header>
+    <section class="intro"><div><p class="kicker">IMMUTABLE LIFECYCLE RECORD</p><h1>Battery intelligence,<br><em>made verifiable.</em></h1><p class="lede">Live IoT health data for a transparent battery passport.</p></div></section>
+    <section class="metrics"><article><span>STATE OF HEALTH</span><strong id="soh">--</strong><small id="sohStatus">--</small></article><article><span>STATE OF CHARGE</span><strong id="soc">--</strong><small>Current estimate</small></article><article><span>TEMPERATURE</span><strong id="temp">--</strong><small id="tempStatus">Within operating range</small></article></section>
+    <section class="panel dashboard-orders"><div class="panel-head"><div><p class="kicker">YOUR VOLTPASS ACCOUNT</p><h2>My bookings & batteries</h2></div><a class="text-link" href="/marketplace.html">Browse marketplace →</a></div><div class="buyer-lookup"><label for="dashboardBuyerEmail">Buyer email</label><input id="dashboardBuyerEmail" type="email" placeholder="Email used for marketplace booking"><button id="saveBuyerEmail" class="secondary" type="button">Show my batteries</button></div><div id="dashboardOrders" class="dashboard-order-list"><p class="muted-message">Use the email from your marketplace booking to see its status here.</p></div></section>
+    <section class="grid"><article class="panel chart-panel"><div class="panel-head"><div><p class="kicker">TELEMETRY / LAST 30 READINGS</p><h2>Battery health trend</h2></div><span class="chip" id="batteryId">--</span></div><div class="chart-wrap"><svg id="chart" viewBox="0 0 700 220" preserveAspectRatio="none"><path id="chartArea"></path><polyline id="chartLine"></polyline></svg><div class="chart-labels"><span>30 min ago</span><span>Now</span></div></div></article><article class="panel passport"><div class="panel-head"><div><p class="kicker">PASSPORT IDENTITY</p><h2>Asset details</h2></div><span class="verified">✓ VERIFIED</span></div><dl id="details"></dl><button id="transfer" class="secondary">Transfer ownership</button></article></section>
+    <section class="panel ml-panel"><div class="panel-head"><div><p class="kicker">PREDICTIVE BATTERY INTELLIGENCE</p><h2>ML health assessment</h2></div><span class="chip" id="mlStatus">Loading model…</span></div><div class="ml-results"><div><span>PREDICTED SOH</span><strong id="predictedSoh">--</strong></div><div><span>REMAINING CYCLES</span><strong id="predictedRul">--</strong></div><div><span>MODEL CONFIDENCE</span><strong id="mlConfidence">--</strong></div><div><span>REUSE GUIDANCE</span><strong id="compatibility">--</strong></div></div><p id="mlDecision" class="ml-decision">Waiting for model prediction…</p><p class="ml-note">Predictions use the supplied model trained on synthetic cycling data. Pack-to-cell feature values are proxies; validate against calibrated BMS measurements before operational use.</p><button id="runPrediction" class="secondary">Re-run prediction</button></section>
+  </main><div id="toast" class="toast"></div><script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script><script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script><script src="/app.js"></script>
+</body>
+</html>
